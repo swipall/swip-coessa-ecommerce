@@ -1,18 +1,17 @@
-import type { Metadata } from 'next';
-import { Suspense } from 'react';
-import { searchProducts, getCollection } from '@/lib/swipall/rest-adapter';
-import { ProductGrid } from '@/components/commerce/product-grid';
 import { FacetFilters } from '@/components/commerce/facet-filters';
+import { ProductGrid } from '@/components/commerce/product-grid';
 import { ProductGridSkeleton } from '@/components/shared/product-grid-skeleton';
-import { buildSearchInput, getCurrentPage } from '@/lib/search-helpers';
-import { cacheLife, cacheTag } from 'next/cache';
+import { getAuthUserCustomerId } from '@/lib/auth';
 import {
-    SITE_NAME,
-    truncateDescription,
     buildCanonicalUrl,
     buildOgImages,
+    SITE_NAME
 } from '@/lib/metadata';
-import { getAuthUserCustomerId } from '@/lib/auth';
+import { buildSearchInput, getCurrentPage } from '@/lib/search-helpers';
+import { getTaxonomies, searchProducts } from '@/lib/swipall/rest-adapter';
+import type { Metadata } from 'next';
+import { cacheLife, cacheTag } from 'next/cache';
+import { Suspense } from 'react';
 
 async function getCollectionProducts(slug: string, searchParams: { [key: string]: string | string[] | undefined }, customerId?: string) {
     'use cache';
@@ -34,7 +33,9 @@ async function getCollectionMetadata(slug: string) {
     cacheTag(`collection-meta-${slug}`);
 
     // return await getCollection(slug);
-    return { data: {name: '', slug: slug }}
+    // const taxonomies = await getTaxonomies({ parent__slug: slug });
+    // console.log('Taxonomies:', taxonomies);
+    return { data: { name: '', slug: slug } }
 }
 
 export async function generateMetadata({
@@ -80,18 +81,16 @@ export default async function CollectionPage({ params, searchParams }: PageProps
 
     const customerId = await getAuthUserCustomerId();
     const productDataPromise = getCollectionProducts(slug, searchParamsResolved, customerId);
-
+    const taxonomies = await getTaxonomies({ parent__slug: slug });
+    
     return (
-        <div className="container mx-auto px-4 py-8 mt-16">
+        <div className="container mt-16 bg-gray-100">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                {/* Filters Sidebar */}
                 <aside className="lg:col-span-1">
                     <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-lg" />}>
-                        <FacetFilters productDataPromise={productDataPromise} />
+                        <FacetFilters taxonomies={taxonomies.results} searchParams={searchParamsResolved} />
                     </Suspense>
                 </aside>
-
-                {/* Product Grid */}
                 <div className="lg:col-span-3">
                     <Suspense fallback={<ProductGridSkeleton />}>
                         <ProductGrid productDataPromise={productDataPromise} currentPage={page} take={12} />
