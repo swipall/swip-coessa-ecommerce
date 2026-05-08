@@ -20,7 +20,7 @@ async function VerifyEmailContent({searchParams}: {searchParams: Promise<Record<
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm text-white/50 mb-4">
                         Please check your email for the correct verification link, or request a new one from your profile page.
                     </p>
                     <Button asChild>
@@ -44,7 +44,7 @@ async function VerifyEmailContent({searchParams}: {searchParams: Promise<Record<
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-sm text-muted-foreground mb-4">
+                        <p className="text-sm text-white/50 mb-4">
                             Your email address has been changed. You can now use your new email address to sign in.
                         </p>
                         <Button asChild>
@@ -64,7 +64,7 @@ async function VerifyEmailContent({searchParams}: {searchParams: Promise<Record<
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm text-white/50 mb-4">
                         The verification link may have expired or already been used. Please request a new verification email from your profile page.
                     </p>
                     <Button asChild>
@@ -83,7 +83,7 @@ async function VerifyEmailContent({searchParams}: {searchParams: Promise<Record<
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm text-white/50 mb-4">
                         Please try again later or contact support if the problem persists.
                     </p>
                     <Button asChild>

@@ -26,6 +26,7 @@ import { AddressForm } from './address-form';
 import { createAddress, updateAddress, deleteAddress } from './actions';
 import { useRouter } from 'next/navigation';
 import { AddressInterface } from '@/lib/swipall/users/user.types';
+import { toast } from 'sonner';
 
 interface AddressesClientProps {
     addresses: AddressInterface[];
@@ -64,9 +65,10 @@ export function AddressesClient({ addresses }: AddressesClientProps) {
             router.refresh();
             setDeleteDialogOpen(false);
             setAddressToDelete(null);
+            toast.success('Dirección eliminada');
         } catch (error) {
             console.error('Error deleting address:', error);
-            alert(`Error eliminando dirección: ${error instanceof Error ? error.message : 'Error desconocido'}`);
+            toast.error('Error al eliminar dirección', { description: error instanceof Error ? error.message : 'Error desconocido' });
         } finally {
             setIsDeleting(false);
         }
@@ -83,9 +85,10 @@ export function AddressesClient({ addresses }: AddressesClientProps) {
             router.refresh();
             setDialogOpen(false);
             setEditingAddress(null);
+            toast.success(editingAddress ? 'Dirección actualizada' : 'Dirección guardada');
         } catch (error) {
             console.error('Error saving address:', error);
-            alert(`Error guardando dirección: ${error instanceof Error ? error.message : 'Error desconocido'}`);
+            toast.error('Error al guardar dirección', { description: error instanceof Error ? error.message : 'Error desconocido' });
         } finally {
             setIsSubmitting(false);
         }
@@ -104,7 +107,7 @@ export function AddressesClient({ addresses }: AddressesClientProps) {
             {addresses.length === 0 ? (
                 <Card>
                     <CardContent className="py-12 text-center">
-                        <p className="text-muted-foreground mb-4">No tienes direcciones guardadas aún</p>
+                        <p className="text-white/50 mb-4">No tienes direcciones guardadas aún</p>
                         <Button onClick={handleAddNew}>
                             <Plus className="mr-2 h-4 w-4" />
                             Agregar tu primera dirección
@@ -148,7 +151,7 @@ export function AddressesClient({ addresses }: AddressesClientProps) {
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <div className="text-sm text-muted-foreground space-y-1">
+                                <div className="text-sm text-white/50 space-y-1">
                                     <p>{address.address}</p>
                                     {address.suburb && <p>{address.suburb}</p>}
                                     <p>

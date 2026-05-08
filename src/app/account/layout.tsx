@@ -23,7 +23,7 @@ export default async function AccountLayout({children}: LayoutProps<'/account'>)
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100 transition-colors"
+                                className="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-accent transition-colors"
                             >
                                 <item.icon className="h-5 w-5"/>
                                 {item.label}

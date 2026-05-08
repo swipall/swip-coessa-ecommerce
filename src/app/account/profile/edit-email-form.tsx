@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState, useEffect } from 'react';
+import { toast } from 'sonner';
 import { requestEmailUpdateAction } from './actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,8 +19,12 @@ export function EditEmailForm({ currentEmail }: EditEmailFormProps) {
         if (state?.success) {
             const form = document.getElementById('edit-email-form') as HTMLFormElement;
             form?.reset();
+            toast.success('Correo actualizado', { description: 'Se envió un correo de verificación a tu nueva dirección.' });
         }
-    }, [state?.success]);
+        if (state?.error) {
+            toast.error('Error', { description: state.error });
+        }
+    }, [state]);
 
     return (
         <Card>
@@ -62,20 +67,10 @@ export function EditEmailForm({ currentEmail }: EditEmailFormProps) {
                             required
                             disabled={isPending}
                         />
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs text-white/50">
                             Enter your password to confirm this change.
                         </p>
                     </div>
-                    {state?.error && (
-                        <div className="text-sm text-destructive">
-                            {state.error}
-                        </div>
-                    )}
-                    {state?.success && (
-                        <div className="text-sm text-green-600">
-                            Verification email sent! Please check your inbox and click the link to confirm your new email address.
-                        </div>
-                    )}
                     <Button type="submit" disabled={isPending}>
                         {isPending ? 'Sending...' : 'Update Email'}
                     </Button>

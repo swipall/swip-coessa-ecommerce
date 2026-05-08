@@ -15,7 +15,7 @@ export function ProductCard({product}: ProductCardProps) {
     return (
         <Link
             href={`/product/${product.id}`}
-            className="group block bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg transition-shadow"
+            className="group block bg-card rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all"
         >
             <div className="aspect-square relative bg-muted">
                 {imageUrl ? (
@@ -27,7 +27,7 @@ export function ProductCard({product}: ProductCardProps) {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                    <div className="w-full h-full flex items-center justify-center text-white/50">
                         Sin imagen
                     </div>
                 )}
@@ -41,7 +41,7 @@ export function ProductCard({product}: ProductCardProps) {
                         {price ? (
                             <Price value={price} />
                         ) : (
-                            <span className="text-muted-foreground">Precio no disponible</span>
+                            <span className="text-white/50">Precio no disponible</span>
                         )}
                     </p>
                 </Suspense>

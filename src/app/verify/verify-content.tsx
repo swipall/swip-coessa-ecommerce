@@ -25,7 +25,7 @@ export function VerifyContent({searchParams}: VerifyContentProps) {
                     </div>
                     <div className="space-y-2 text-center">
                         <h1 className="text-2xl font-bold">Invalid Verification Link</h1>
-                        <p className="text-muted-foreground">
+                        <p className="text-white/50">
                             The verification link is invalid or missing a token.
                         </p>
                     </div>

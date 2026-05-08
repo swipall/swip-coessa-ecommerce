@@ -32,7 +32,7 @@ export default function PaymentStep({ onComplete }: PaymentStepProps) {
   if (enabledPaymentMethods.length === 0) {
     return (
       <div className="text-center py-8">
-        <p className="text-muted-foreground">No hay métodos de pago disponibles.</p>
+        <p className="text-white/50">No hay métodos de pago disponibles.</p>
       </div>
     );
   }
@@ -49,11 +49,11 @@ export default function PaymentStep({ onComplete }: PaymentStepProps) {
               <Card className="p-4">
                 <div className="flex items-center gap-3">
                   <RadioGroupItem value={method.id} id={method.id} />
-                  <IconComponent className="h-5 w-5 text-muted-foreground" />
+                  <IconComponent className="h-5 w-5 text-white/50" />
                   <div className="flex-1">
                     <p className="font-medium">{method.label}</p>
                     {method.description && (
-                      <p className="text-sm text-muted-foreground mt-1">
+                      <p className="text-sm text-white/50 mt-1">
                         {method.description}
                       </p>
                     )}

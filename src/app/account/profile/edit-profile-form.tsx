@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState, useEffect } from 'react';
+import { toast } from 'sonner';
 import { updateCustomerAction } from './actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,8 +22,12 @@ export function EditProfileForm({ customer }: EditProfileFormProps) {
         if (state?.success) {
             const form = document.getElementById('edit-profile-form') as HTMLFormElement;
             form?.reset();
+            toast.success('Perfil actualizado', { description: 'Tu información personal fue guardada.' });
         }
-    }, [state?.success]);
+        if (state?.error) {
+            toast.error('Error', { description: state.error });
+        }
+    }, [state]);
 
     return (
         <Card>
@@ -58,16 +63,6 @@ export function EditProfileForm({ customer }: EditProfileFormProps) {
                             disabled={isPending}
                         />
                     </div>
-                    {state?.error && (
-                        <div className="text-sm text-destructive">
-                            {state.error}
-                        </div>
-                    )}
-                    {state?.success && (
-                        <div className="text-sm text-green-600">
-                            Profile updated successfully!
-                        </div>
-                    )}
                     <Button type="submit" disabled={isPending}>
                         {isPending ? 'Updating...' : 'Update Profile'}
                     </Button>
