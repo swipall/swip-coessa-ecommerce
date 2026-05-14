@@ -23,7 +23,12 @@ function humanizeSlug(value: string) {
 
 export function HomeCategoriesSection({ post }: HomeCategoriesSectionProps) {
     const body = parsePostBody<HomeCategoriesBody>(post.body);
-    const items = body?.items ?? [];
+    const seen = new Set<string>();
+    const items = (body?.items ?? []).filter((item) => {
+        if (seen.has(item.slug)) return false;
+        seen.add(item.slug);
+        return true;
+    });
 
     if (items.length === 0) {
         return null;
@@ -31,7 +36,7 @@ export function HomeCategoriesSection({ post }: HomeCategoriesSectionProps) {
 
     return (
         <section className="py-12 md:py-16">
-            <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto px-4">
                 {post.title && (
                     <h2 className="text-3xl md:text-4xl font-bold mb-8">
                         {post.title}
@@ -44,7 +49,7 @@ export function HomeCategoriesSection({ post }: HomeCategoriesSectionProps) {
                             <Link
                                 key={item.slug}
                                 href={`/collection/${item.slug}`}
-                                className="group rounded-2xl border bg-background/60 hover:bg-background transition-colors overflow-hidden"
+                                className="group rounded-2xl bg-card hover:shadow-2xl hover:shadow-slate-900/10 transition-colors overflow-hidden"
                             >
                                 <div className="relative aspect-square overflow-hidden">
                                     {item.image ? (

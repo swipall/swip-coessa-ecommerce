@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
             },
             {
                 hostname: 'swip-catalogs-443115567646.us-central1.run.app'
+            },
+            {
+                hostname: 'encrypted-tbn0.gstatic.com'
             }
         ],
     },

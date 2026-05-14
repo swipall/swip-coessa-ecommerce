@@ -29,7 +29,7 @@ export function MobileMenu({ children }: MobileMenuProps) {
                 <div className="flex flex-col h-full">
                     <div className="flex items-center justify-between px-4 py-4 border-b border-border">
                         <span className="font-semibold text-sm uppercase tracking-wider text-primary">Menú</span>
-                        <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
+                        <Button onClick={() => setOpen(false)}>
                             <X className="h-4 w-4" />
                         </Button>
                     </div>

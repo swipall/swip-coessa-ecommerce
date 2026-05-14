@@ -37,15 +37,13 @@ export function HomeBannerSliderSection({
     const autoplay = sliderConfig?.autoplay ?? true;
     const duration = sliderConfig?.duration ?? 5000;
 
-    // Determinar el tipo de cada item
     const getItemType = (item: CmsPost): "banner" | "image" => {
-        const categorySlugs = new Set(item.categories?.map((cat) => cat.slug) ?? []);
-        return categorySlugs.has("home-banner") ? "banner" : "image";
+        return (item.title || item.excerpt) ? "banner" : "image";
     };
 
     return (
-        <section className="container mx-auto px-3 py-3 md:px-6 md:py-6">
-            <div className="relative w-full overflow-hidden rounded-2xl border border-transparent animate-[goldBorderIn_2s_ease-out_0.3s_forwards]">
+        <section className="max-w-7xl mx-auto bg-background">
+            <div className="relative w-full overflow-hidden rounded-2xl">
                 <Carousel
                     opts={{
                         align: "start",
@@ -103,22 +101,22 @@ function BannerSliderItemFull({ item }: { item: CmsPost }) {
     const buttonText = itemBody?.buttonText ?? "Ver más";
 
     return (
-        <div className="relative w-full">
+        <div className="flex flex-col sm:flex-row-reverse relative w-full">
             <Image
                 src={item.featured_image}
                 alt={item.title ?? "Banner"}
                 width={0}
                 height={0}
                 sizes="100vw"
-                className="w-full h-auto block"
+                className="w-full sm:w-2/3 h-auto block px-6"
                 priority
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-            <div className="absolute inset-0 flex items-center">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-xl text-white space-y-4">
+           
+            <div className="w-full sm:w-1/3 inset-0 flex items-center px-6">
+                <div className="container mx-auto px-6">
+                    <div className="text-primary space-y-4">
                         {subtitle && (
-                            <p className="text-sm uppercase tracking-[0.2em] text-white/80">
+                            <p className="text-sm uppercase tracking-[0.2em] text-primary">
                                 {subtitle}
                             </p>
                         )}
@@ -128,7 +126,7 @@ function BannerSliderItemFull({ item }: { item: CmsPost }) {
                             </h2>
                         )}
                         {item.excerpt && (
-                            <p className="text-base md:text-lg text-white/90">
+                            <p className="text-base md:text-lg text-primary">
                                 {item.excerpt}
                             </p>
                         )}

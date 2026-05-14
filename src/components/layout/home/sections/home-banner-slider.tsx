@@ -13,8 +13,10 @@ export async function HomeBannerSliderSectionWrapper({ post, items }: { post: Cm
     }
     try {
         const sliderItems = await getPosts({ parent__slug: post.slug });
+        console.log(`[Home] getPosts banner slider (slug: ${post.slug}) response:`, JSON.stringify(sliderItems, null, 2));
         const sortedItems = (sliderItems.results ?? [])
             .sort((a, b) => (a.ordering ?? 0) - (b.ordering ?? 0));
+        console.log(`[Home] slider children (slug: ${post.slug}):`, JSON.stringify(sortedItems, null, 2));
         return <HomeBannerSliderSection post={post} items={sortedItems} />;
     } catch (error) {
         return null;

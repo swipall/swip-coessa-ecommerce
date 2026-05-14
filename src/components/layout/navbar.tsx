@@ -9,11 +9,12 @@ import { ThemeSwitcher } from '@/components/layout/navbar/theme-switcher';
 import { Suspense } from "react";
 import { SearchInput } from '@/components/layout/search-input';
 import { SearchInputSkeleton } from '@/components/shared/skeletons/search-input-skeleton';
+import { NavbarScrollWrapper } from '@/components/layout/navbar/navbar-scroll-wrapper';
 
 export function Navbar() {
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/40">
-            <div className="container mx-auto px-4">
+        <NavbarScrollWrapper>
+            <div className="max-w-7xl mx-auto px-4">
                 <div className="flex items-center justify-between py-2">
                     {/* Left: hamburger (mobile) + logo + desktop nav */}
                     <div className="flex items-center gap-3">
@@ -25,11 +26,12 @@ export function Navbar() {
 
                         <Link href="/" className="flex-shrink-0">
                             <Image
-                                src="https://mmcb.b-cdn.net/media/attachments/0/c/4/0/60593b52331c1146353026da4cbc9ffbfd78b635db83fca47b25690df620/logo.jpg"
+                                src="https://mmcb.b-cdn.net/media/attachments/b/1/9/3/835bf7236b2fc15a4e82cfacd1579cdfd3a73195ea2ae775a9e7480993fb/logo.png"
                                 alt="Swipall"
                                 width={40}
                                 height={27}
-                                className="h-14 w-auto"
+                                className="h-14 w-auto dark:invert"
+                                priority
                             />
                         </Link>
 
@@ -49,10 +51,13 @@ export function Navbar() {
                         </div>
 
                         <ThemeSwitcher />
-                        <Suspense>
-                            <NavbarCart />
-                        </Suspense>
-                        <NavbarUser />
+                        <div className="hidden">
+                            <Suspense>
+                                <NavbarCart />
+                            </Suspense>
+                            <NavbarUser />
+                        </div>
+
                     </div>
                 </div>
 
@@ -63,6 +68,6 @@ export function Navbar() {
                     </Suspense>
                 </div>
             </div>
-        </header>
+        </NavbarScrollWrapper>
     );
 }

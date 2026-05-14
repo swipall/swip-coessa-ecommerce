@@ -10,6 +10,7 @@ export async function HomePageComponent() {
     cacheLife("hours");
 
     const postsResponse = await getPosts({ parent__slug: HOME_PARENT_SLUG });
+    console.log("[Home] getPosts response:", JSON.stringify(postsResponse, null, 2));
     const blocks = (postsResponse.results ?? [])
         .filter((post) => getHomeBlockType(post))
         .sort((a, b) => (a.ordering ?? 0) - (b.ordering ?? 0));

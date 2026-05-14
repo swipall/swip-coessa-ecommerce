@@ -15,7 +15,7 @@ export function ProductCard({product}: ProductCardProps) {
     return (
         <Link
             href={`/product/${product.id}`}
-            className="group block bg-card rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all"
+            className="group block bg-card rounded-lg overflow-hidden bg-card hover:shadow-lg transition-all"
         >
             <div className="aspect-square relative bg-muted">
                 {imageUrl ? (

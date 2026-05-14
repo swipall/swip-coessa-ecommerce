@@ -68,7 +68,7 @@ export default async function CmsPage({ params }: PageProps<'/page/[slug]'>) {
 	}
 
 	return (
-		<div className="container mx-auto px-4 py-8 mt-16">
+		<div className="max-w-7xl mx-auto px-4 py-8 mt-16">
 			<article className="prose prose-neutral max-w-none">
 				{post.title ? <h1>{post.title}</h1> : null}
 				<div dangerouslySetInnerHTML={{ __html: html }} />

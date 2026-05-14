@@ -37,6 +37,7 @@ export async function HomeProductsByCategorySection({ post }: HomeProductsByCate
         ordering,
         taxonomies__slug__and: categorySlug,
     });
+    console.log(`[Home] searchProducts (category: ${categorySlug}) response:`, JSON.stringify(result, null, 2));
 
     const products = result.results.filter((product) => product.kind !== ProductKind.Service);
 

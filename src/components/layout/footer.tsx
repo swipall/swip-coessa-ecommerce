@@ -49,8 +49,8 @@ export async function Footer() {
                     <div className="flex flex-col gap-4">
                         <Link href="/">
                             <Image
-                                src="https://mmcb.b-cdn.net/media/attachments/0/c/4/0/60593b52331c1146353026da4cbc9ffbfd78b635db83fca47b25690df620/logo.jpg"
-                                alt="Koi Collectibles"
+                                src="https://mmcb.b-cdn.net/media/attachments/b/1/9/3/835bf7236b2fc15a4e82cfacd1579cdfd3a73195ea2ae775a9e7480993fb/logo.png"
+                                alt="COESSA COLCHONES"
                                 width={120}
                                 height={40}
                                 className="h-12 w-auto"
@@ -64,7 +64,7 @@ export async function Footer() {
                             <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider text-primary">
                                 {menu.title}
                             </h4>
-                            <ul className="space-y-2 text-sm text-white">
+                            <ul className="space-y-2 text-sm">
                                 {menu.items.length === 0 && (
                                     <li className="italic opacity-40">Sin contenido</li>
                                 )}
@@ -95,7 +95,7 @@ export async function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
+                <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
                     <Copyright />
                     <div className="flex items-center gap-2 text-muted-foreground">
                         <span>Powered by</span>
