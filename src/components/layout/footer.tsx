@@ -106,7 +106,7 @@ export async function Footer() {
                             className="hover:text-primary transition-colors"
                         >
                             <Image
-                                src="/swipall-icon.svg"
+                                src="https://mmcb.b-cdn.net/media/attachments/6/8/3/3/9a8955f143cdd1229610a38bdf23178fe55dcfd46f5ac580fb311c7861ad/logo.avif"
                                 alt="Swipall"
                                 width={40}
                                 height={27}
