@@ -4,7 +4,7 @@ import { addToCart, getGroupVariant, testApiMiddleWare } from '@/app/product/[id
 import { Price } from '@/components/commerce/price';
 import { Button } from '@/components/ui/button';
 import { InterfaceInventoryItem, Material, ProductKind, ProductVariant, VariantOption } from '@/lib/swipall/types/types';
-import { CheckCircle2, ShoppingCart } from 'lucide-react';
+import { CheckCircle2, PhoneCall, ShoppingCart } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useState, useTransition } from 'react';
 import { toast } from 'sonner';
@@ -287,9 +287,17 @@ export function ProductInfo({ product, searchParams }: ProductInfoProps) {
                 />
             )}
 
+            <div className="mt-4 py-2 bg-primary rounded-md  text-center">
+                <a href='tel:3535324796' role='button'
+                    className="w-full flex text-lg font-bold text-white justify-center gap-4 items-center"
+                >
+                    <PhoneCall className='text-white h-5 w-5' />
+                   Contactar un Asesor
+                </a>
+            </div>
 
 
-            <div className="pt-4">
+            <div className="pt-4 hidden">
                 <Button
                     size="lg"
                     className="w-full text-lg font-bold"

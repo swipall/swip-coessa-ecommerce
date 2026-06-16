@@ -170,19 +170,19 @@ export default async function ProductDetailPage({ params, searchParams }: PagePr
                                         <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-background flex items-center justify-center">
                                             <svg className="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#3d4080" d="M320 64C324.6 64 329.2 65 333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.6 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64zM320 130.8L320 508.9C458 442.1 495.1 294.1 496 205.5L320 130.9L320 130.9z"></path></svg>
                                         </span>
-                                        <span className="text-sm text-gray-600">Mayor control de calidad en cada etapa</span>
+                                        <span className="text-sm text-foreground">Mayor control de calidad en cada etapa</span>
                                     </li>
                                     <li className="flex items-center gap-3  px-4 py-3 border border-border rounded-xl">
                                         <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-background flex items-center justify-center">
                                             <svg className="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#3d4080" d="M96 128C78.3 128 64 142.3 64 160C64 177.7 78.3 192 96 192L182.7 192C195 220.3 223.2 240 256 240C288.8 240 317 220.3 329.3 192L544 192C561.7 192 576 177.7 576 160C576 142.3 561.7 128 544 128L329.3 128C317 99.7 288.8 80 256 80C223.2 80 195 99.7 182.7 128L96 128zM96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L342.7 352C355 380.3 383.2 400 416 400C448.8 400 477 380.3 489.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L489.3 288C477 259.7 448.8 240 416 240C383.2 240 355 259.7 342.7 288L96 288zM96 448C78.3 448 64 462.3 64 480C64 497.7 78.3 512 96 512L150.7 512C163 540.3 191.2 560 224 560C256.8 560 285 540.3 297.3 512L544 512C561.7 512 576 497.7 576 480C576 462.3 561.7 448 544 448L297.3 448C285 419.7 256.8 400 224 400C191.2 400 163 419.7 150.7 448L96 448z"></path></svg>
                                         </span>
-                                        <span className="text-sm text-gray-600">Personalización real del producto</span>
+                                        <span className="text-sm text-foreground">Personalización real del producto</span>
                                     </li>
                                     <li className="flex items-center gap-3  px-4 py-3 border border-border rounded-xl">
                                         <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-background flex items-center justify-center">
                                             <svg className="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#3d4080" d="M433.2 103.1L581.4 253.4C609.1 281.5 609.1 326.5 581.4 354.6L425 512.9C415.7 522.3 400.5 522.4 391.1 513.1C381.7 503.8 381.6 488.6 390.9 479.2L547.3 320.8C556.5 311.5 556.5 296.4 547.3 287.1L399 136.9C389.7 127.5 389.8 112.3 399.2 103C408.6 93.7 423.8 93.8 433.1 103.2zM64.1 293.5L64.1 160C64.1 124.7 92.8 96 128.1 96L261.6 96C278.6 96 294.9 102.7 306.9 114.7L450.9 258.7C475.9 283.7 475.9 324.2 450.9 349.2L317.4 482.7C292.4 507.7 251.9 507.7 226.9 482.7L82.9 338.7C70.9 326.7 64.2 310.4 64.2 293.4zM208.1 208C208.1 190.3 193.8 176 176.1 176C158.4 176 144.1 190.3 144.1 208C144.1 225.7 158.4 240 176.1 240C193.8 240 208.1 225.7 208.1 208z"></path></svg>
                                         </span>
-                                        <span className="text-sm text-gray-600">Mejor relación calidad–precio sin intermediarios</span>
+                                        <span className="text-sm text-foreground">Mejor relación calidad–precio sin intermediarios</span>
                                     </li>
                                 </ul>
                             </article>
@@ -237,19 +237,19 @@ export default async function ProductDetailPage({ params, searchParams }: PagePr
                                         <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-background flex items-center justify-center">
                                             <svg className="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#3d4080" d="M320 128C426 128 512 214 512 320C512 426 426 512 320 512C254.8 512 197.1 479.5 162.4 429.7C152.3 415.2 132.3 411.7 117.8 421.8C103.3 431.9 99.8 451.9 109.9 466.4C156.1 532.6 233 576 320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C234.3 64 158.5 106.1 112 170.7L112 144C112 126.3 97.7 112 80 112C62.3 112 48 126.3 48 144L48 256C48 273.7 62.3 288 80 288L104.6 288C105.1 288 105.6 288 106.1 288L192.1 288C209.8 288 224.1 273.7 224.1 256C224.1 238.3 209.8 224 192.1 224L153.8 224C186.9 166.6 249 128 320 128zM344 216C344 202.7 333.3 192 320 192C306.7 192 296 202.7 296 216L296 320C296 326.4 298.5 332.5 303 337L375 409C384.4 418.4 399.6 418.4 408.9 409C418.2 399.6 418.3 384.4 408.9 375.1L343.9 310.1L343.9 216z"></path></svg>
                                         </span>
-                                        <span className="text-sm text-gray-600">Durabilidad a largo plazo, no solo confort inicial</span>
+                                        <span className="text-sm text-foreground">Durabilidad a largo plazo, no solo confort inicial</span>
                                     </li>
                                     <li className="flex items-center gap-3  px-4 py-3 border border-border rounded-xl">
                                         <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-background flex items-center justify-center">
                                             <svg className="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#3d4080" d="M576 96C576 204.1 499.4 294.3 397.6 315.4C389.7 257.3 363.6 205 325.1 164.5C365.2 104 433.9 64 512 64L544 64C561.7 64 576 78.3 576 96zM64 160C64 142.3 78.3 128 96 128L128 128C251.7 128 352 228.3 352 352L352 544C352 561.7 337.7 576 320 576C302.3 576 288 561.7 288 544L288 384C164.3 384 64 283.7 64 160z"></path></svg>
                                         </span>
-                                        <span className="text-sm text-gray-600">Materiales hipoalergénicos y de alta calidad</span>
+                                        <span className="text-sm text-foreground">Materiales hipoalergénicos y de alta calidad</span>
                                     </li>
                                     <li className="flex items-center gap-3  px-4 py-3 border border-border rounded-xl">
                                         <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-background flex items-center justify-center">
                                             <svg className="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#3d4080" d="M320 80C377.4 80 424 126.6 424 184C424 241.4 377.4 288 320 288C262.6 288 216 241.4 216 184C216 126.6 262.6 80 320 80zM96 152C135.8 152 168 184.2 168 224C168 263.8 135.8 296 96 296C56.2 296 24 263.8 24 224C24 184.2 56.2 152 96 152zM0 480C0 409.3 57.3 352 128 352C140.8 352 153.2 353.9 164.9 357.4C132 394.2 112 442.8 112 496L112 512C112 523.4 114.4 534.2 118.7 544L32 544C14.3 544 0 529.7 0 512L0 480zM521.3 544C525.6 534.2 528 523.4 528 512L528 496C528 442.8 508 394.2 475.1 357.4C486.8 353.9 499.2 352 512 352C582.7 352 640 409.3 640 480L640 512C640 529.7 625.7 544 608 544L521.3 544zM472 224C472 184.2 504.2 152 544 152C583.8 152 616 184.2 616 224C616 263.8 583.8 296 544 296C504.2 296 472 263.8 472 224zM160 496C160 407.6 231.6 336 320 336C408.4 336 480 407.6 480 496L480 512C480 529.7 465.7 544 448 544L192 544C174.3 544 160 529.7 160 512L160 496z"></path></svg>
                                         </span>
-                                        <span className="text-sm text-gray-600">Soluciones para hogar, hotelería e infantil</span>
+                                        <span className="text-sm text-foreground">Soluciones para hogar, hotelería e infantil</span>
                                     </li>
                                 </ul>
                             </article>
